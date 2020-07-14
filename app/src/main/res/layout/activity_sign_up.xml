@@ -69,16 +69,6 @@
             android:padding="16dp"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/editText_sigup_username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Username"
-                android:gravity="center"
-                android:inputType="text"
-                android:fontFamily="@font/montserratmedium"
-                android:textColorHint="@color/text_white"
-                android:background="@drawable/edittext_roundcorner_background"/>
 
             <EditText
                 android:id="@+id/editText_signup_email"
@@ -86,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Email"
                 android:gravity="center"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:inputType="text"
                 android:fontFamily="@font/montserratmedium"
                 android:textColorHint="@color/text_white"
