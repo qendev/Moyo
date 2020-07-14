@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Moyo App</string>
+    <string name="create_account"><u>Create Account.</u></string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="terms_and_conditions"><u>Terms and Conditions</u></string>
+    <string name="moyo_app">Moyo App</string>
+    <string name="developed_by_somebody"><u>Developed by Somebody</u></string>
 </resources>

@@ -1,14 +1,14 @@
-package com.example.moyoapp;
+ package com.example.moyoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class FirstScreen extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_screen);
+        setContentView(R.layout.activity_login);
     }
 }

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_moyoapp_Color"
+    tools:context=".SignUpActivity">
+
+    <TextView
+        android:id="@+id/textView_moyoapp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserratmedium"
+        android:gravity="center_horizontal"
+        android:text="Moyo App"
+        android:textColor="@color/text_white"
+        android:textSize="32sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textView_moyoapp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editText_firstname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="First Name"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserratmedium"
+                android:inputType="text"
+                android:background="@drawable/firstname_lastname_edittext_background"
+                android:textColorHint="@color/text_white"/>
+
+            <EditText
+                android:id="@+id/editText_lastname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Last Name"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="@font/montserratmedium"
+                android:inputType="text"
+                android:background="@drawable/firstname_lastname_edittext_background"
+                android:textColorHint="@color/text_white"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editText_sigup_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:gravity="center"
+                android:inputType="text"
+                android:fontFamily="@font/montserratmedium"
+                android:textColorHint="@color/text_white"
+                android:background="@drawable/edittext_roundcorner_background"/>
+
+            <EditText
+                android:id="@+id/editText_signup_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:inputType="text"
+                android:fontFamily="@font/montserratmedium"
+                android:textColorHint="@color/text_white"
+                android:background="@drawable/edittext_roundcorner_background"/>
+
+            <EditText
+                android:id="@+id/editText_signup_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:inputType="textPassword"
+                android:fontFamily="@font/montserratmedium"
+                android:textColorHint="@color/text_white"
+                android:background="@drawable/edittext_roundcorner_background"/>
+
+            <EditText
+                android:id="@+id/editText_signup_confirmpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm Password"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:inputType="textPassword"
+                android:fontFamily="@font/montserratmedium"
+                android:textColorHint="@color/text_white"
+                android:background="@drawable/edittext_roundcorner_background"/>
+
+            <EditText
+                android:id="@+id/editText_signup_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City/Town"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:inputType="text"
+                android:fontFamily="@font/montserratmedium"
+                android:textColorHint="@color/text_white"
+                android:background="@drawable/edittext_roundcorner_background"/>
+
+
+            <Button
+                android:id="@+id/button_createbutton"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="Create Account"
+                android:textAllCaps="false"
+                android:fontFamily="@font/montserratmedium"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:background="@drawable/round_cornerbutton_background"
+                android:textSize="16sp"/>
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
