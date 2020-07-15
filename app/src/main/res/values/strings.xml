@@ -5,4 +5,9 @@
     <string name="terms_and_conditions"><u>Terms and Conditions</u></string>
     <string name="moyo_app">Moyo App</string>
     <string name="developed_by_somebody"><u>Developed by MoyoWeb</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation darwer</string>
 </resources>
