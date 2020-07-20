@@ -4,60 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_moyoapp_Color"
+    android:background="@drawable/signup_background"
     tools:context=".SignUpActivity">
+
+    <ImageView
+        android:id="@+id/signup_thelogo"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/the_moyo_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView_moyoapp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/montserratmedium"
+        android:fontFamily="@font/rockoultraflf"
         android:gravity="center_horizontal"
         android:text="Moyo App"
         android:textColor="@color/text_white"
         android:textSize="32sp"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signup_thelogo" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/textView_moyoapp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/textView_moyoapp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="2"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="2">
 
             <EditText
                 android:id="@+id/editText_firstname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="First Name"
-                android:gravity="center"
                 android:layout_weight="1"
-                android:fontFamily="@font/montserratmedium"
-                android:inputType="text"
                 android:background="@drawable/firstname_lastname_edittext_background"
-                android:textColorHint="@color/text_white"/>
+                android:fontFamily="@font/rockoultraflf"
+                android:gravity="center"
+                android:hint="First Name"
+                android:inputType="text"
+                android:textColorHint="@color/textColor_black" />
 
             <EditText
                 android:id="@+id/editText_lastname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Last Name"
-                android:gravity="center"
-                android:layout_weight="1"
                 android:layout_marginLeft="8dp"
-                android:fontFamily="@font/montserratmedium"
-                android:inputType="text"
+                android:layout_weight="1"
                 android:background="@drawable/firstname_lastname_edittext_background"
-                android:textColorHint="@color/text_white"/>
+                android:fontFamily="@font/rockoultraflf"
+                android:gravity="center"
+                android:hint="Last Name"
+                android:inputType="text"
+                android:textColorHint="@color/textColor_black" />
 
 
         </LinearLayout>
@@ -66,91 +77,90 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:padding="16dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp">
 
 
             <EditText
                 android:id="@+id/editText_signup_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
-                android:gravity="center"
                 android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_roundcorner_background"
+                android:fontFamily="@font/rockoultraflf"
+                android:gravity="center"
+                android:hint="Email"
                 android:inputType="text"
-                android:fontFamily="@font/montserratmedium"
-                android:textColorHint="@color/text_white"
-                android:background="@drawable/edittext_roundcorner_background"/>
+                android:textColorHint="@color/textColor_black" />
 
             <EditText
                 android:id="@+id/editText_signup_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
-                android:gravity="center"
                 android:layout_marginTop="16dp"
+                android:background="@drawable/edittext_roundcorner_background"
+                android:fontFamily="@font/rockoultraflf"
+                android:gravity="center"
+                android:hint="Password"
                 android:inputType="textPassword"
-                android:fontFamily="@font/montserratmedium"
-                android:textColorHint="@color/text_white"
-                android:background="@drawable/edittext_roundcorner_background"/>
+                android:textColorHint="@color/textColor_black" />
 
             <EditText
                 android:id="@+id/editText_signup_confirmpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Confirm Password"
-                android:gravity="center"
                 android:layout_marginTop="16dp"
+                android:background="@drawable/edittext_roundcorner_background"
+                android:fontFamily="@font/rockoultraflf"
+                android:gravity="center"
+                android:hint="Confirm Password"
                 android:inputType="textPassword"
-                android:fontFamily="@font/montserratmedium"
-                android:textColorHint="@color/text_white"
-                android:background="@drawable/edittext_roundcorner_background"/>
+                android:textColorHint="@color/textColor_black" />
 
             <EditText
                 android:id="@+id/editText_signup_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="City/Town"
-                android:gravity="center"
                 android:layout_marginTop="16dp"
+                android:background="@drawable/edittext_roundcorner_background"
+                android:fontFamily="@font/rockoultraflf"
+                android:gravity="center"
+                android:hint="City/Town"
                 android:inputType="text"
-                android:fontFamily="@font/montserratmedium"
-                android:textColorHint="@color/text_white"
-                android:background="@drawable/edittext_roundcorner_background"/>
+                android:textColorHint="@color/textColor_black" />
 
 
             <Button
                 android:id="@+id/button_createbutton"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:text="Create Account"
-                android:textAllCaps="false"
-                android:fontFamily="@font/montserratmedium"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
-                android:textColor="#000"
-                android:textStyle="bold"
                 android:background="@drawable/round_cornerbutton_background"
-                android:textSize="16sp"/>
-
-
-
-
-
-
-
-
+                android:fontFamily="@font/rockoultraflf"
+                android:text="SignUp"
+                android:textAllCaps="false"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
 
         </LinearLayout>
 
-
-
-
-
-
-
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/rockoultraflf"
+        android:gravity="center_horizontal"
+        android:text="@string/terms_and_conditions"
+        android:textColor="@color/text_white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserratmedium"
+        android:fontFamily="@font/rockoultraflf"
         android:paddingTop="8dp"
         android:text="Moyo App"
         android:textSize="14sp" />
@@ -24,7 +24,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserratmedium"
+        android:fontFamily="@font/rockoultraflf"
         android:text="info@moyoapp.com"
         android:textSize="14sp" />
 
