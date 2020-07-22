@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/firstscreen_background"
+    android:background="@color/main_moyoapp_Color"
     tools:context=".FirstScreenActivity">
 
 

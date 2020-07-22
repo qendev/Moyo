@@ -2,17 +2,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bp_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/main_moyoapp_Color"
     tools:context="fragments.BpReadingsFragments">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:textColor="@color/text_white"
-        android:fontFamily="@font/montserratmedium"
-        android:text="Bp Readings" />
+        android:orientation="vertical">
+
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?actionBarSize"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="#fff"
+            app:tabIndicatorHeight="4dp"
+            app:tabBackground="@color/colorPrimary"
+            app:tabMode="fixed">
+
+
+            
+        </com.google.android.material.tabs.TabLayout>
+        
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+        </androidx.viewpager.widget.ViewPager>
+    </LinearLayout>
+
+    
 
 </androidx.constraintlayout.widget.ConstraintLayout>

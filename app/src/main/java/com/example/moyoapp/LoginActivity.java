@@ -11,7 +11,6 @@ import android.widget.TextView;
  public class LoginActivity extends AppCompatActivity {
 
     private Button loginbutton;
-    private TextView forgotpasswordtextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,16 +21,8 @@ import android.widget.TextView;
 
         loginbutton = findViewById(R.id.button_login);
 
-        forgotpasswordtextView = findViewById(R.id.forgotpassword);
 
-        forgotpasswordtextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,ResetPasswordActivity.class);
-                startActivity(intent);
 
-            }
-        });
 
         loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override

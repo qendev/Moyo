@@ -10,4 +10,11 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation darwer</string>
     <string name="signup"><u>SignUp</u></string>
+    <string name="date"><u>Date</u></string>
+    <string name="time"><u>Time</u></string>
+    <string name="systolic_diastolic"><u>Systolic/Diastolic</u></string>
+    <string name="heart_rate"><u>Heart Rate</u></string>
+    <string name="systolic_diastolic_bpreadings"><u>Systolic/Diastolic</u></string>
+    <string name="heart_rate_bpreadings"><u>Heart Rate</u></string>
+    <string name="level_bpreadings"><u>Level</u></string>
 </resources>
