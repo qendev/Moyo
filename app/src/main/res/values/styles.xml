@@ -18,4 +18,8 @@
         <item name="titleTextColor">@color/white</item>
     </style>
 
+    <style name="TabLayoutTextFont" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="fontFamily">@font/rockoultraflf</item>
+    </style>
+
 </resources>

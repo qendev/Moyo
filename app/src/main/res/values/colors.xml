@@ -8,4 +8,5 @@
     <color name="main_moyoapp_Color">#7147e8</color>
     <color name="text_white">#fff</color>
     <color name="textColor_black">#000</color>
+    <color name="textColor_grey">#c9c9c9</color>
 </resources>

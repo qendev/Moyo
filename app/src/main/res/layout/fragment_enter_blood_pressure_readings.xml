@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:hint="date"
-                    android:textColorHint="#c9c9c9"
+                    android:textColorHint="@color/textColor_grey"
                     android:inputType="text"/>
 
 
@@ -81,7 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:hint="time"
-                    android:textColorHint="#c9c9c9"
+                    android:textColorHint="@color/textColor_grey"
                     android:inputType="text"/>
 
 
@@ -97,7 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="8dp"
-            android:background="#c9c9c9"/>
+            android:background="#fff"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -128,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:hint="systolic/diastolic"
-                    android:textColorHint="#c9c9c9"
+                    android:textColorHint="@color/textColor_grey"
                     android:inputType="text"/>
 
 
@@ -157,7 +157,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:hint="(normal/abnormal)"
-                    android:textColorHint="#c9c9c9"
+                    android:textColorHint="@color/textColor_grey"
                     android:inputType="text"/>
 
 

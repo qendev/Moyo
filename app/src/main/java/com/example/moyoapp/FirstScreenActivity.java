@@ -19,6 +19,7 @@ public class FirstScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_screen);
 
+        //hide the appbar
         getSupportActionBar().hide();
 
         loginbutton = findViewById(R.id.button_login);

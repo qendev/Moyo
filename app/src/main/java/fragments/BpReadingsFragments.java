@@ -11,15 +11,15 @@ import android.view.ViewGroup;
 
 import com.example.moyoapp.EnterBloodPressureReadingsFragment;
 import com.example.moyoapp.R;
-import com.example.moyoapp.TabAdapter;
+import adapters.Bp_ReadingsAdapter;
 import com.example.moyoapp.bpreadindsFragment;
 import com.google.android.material.tabs.TabLayout;
 
 public class BpReadingsFragments extends Fragment {
 
-    private TabAdapter adapter;
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
+    private Bp_ReadingsAdapter bpadapter;
+    private TabLayout bptabLayout;
+    private ViewPager bpviewPager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,16 +29,16 @@ public class BpReadingsFragments extends Fragment {
        view= inflater.inflate(R.layout.fragment_bp_readings, container, false);
 
 
-        viewPager = view.findViewById(R.id.viewPager);
+        bpviewPager = view.findViewById(R.id.viewPager);
 
-        tabLayout = view.findViewById(R.id.tabLayout);
+        bptabLayout = view.findViewById(R.id.tabLayout);
 
-        adapter = new TabAdapter(getActivity().getSupportFragmentManager());
-        adapter.addFragment(new EnterBloodPressureReadingsFragment(), "Bp Readings");
-        adapter.addFragment(new bpreadindsFragment(), "Bp Readings");
+        bpadapter = new Bp_ReadingsAdapter(getActivity().getSupportFragmentManager());
+        bpadapter.addFragment(new EnterBloodPressureReadingsFragment(), "Enter Blood Pressure");
+        bpadapter.addFragment(new bpreadindsFragment(), "Blood Pressure Readings");
 
-        viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPager(viewPager);
+        bpviewPager.setAdapter(bpadapter);
+        bptabLayout.setupWithViewPager(bpviewPager);
 
 
         return view;

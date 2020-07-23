@@ -10,11 +10,19 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation darwer</string>
     <string name="signup"><u>SignUp</u></string>
-    <string name="date"><u>Date</u></string>
-    <string name="time"><u>Time</u></string>
-    <string name="systolic_diastolic"><u>Systolic/Diastolic</u></string>
-    <string name="heart_rate"><u>Heart Rate</u></string>
-    <string name="systolic_diastolic_bpreadings"><u>Systolic/Diastolic</u></string>
-    <string name="heart_rate_bpreadings"><u>Heart Rate</u></string>
-    <string name="level_bpreadings"><u>Level</u></string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="systolic_diastolic">Systolic/Diastolic</string>
+    <string name="heart_rate">Heart Rate</string>
+    <string name="systolic_diastolic_bpreadings">Systolic/Diastolic</string>
+    <string name="heart_rate_bpreadings">Heart Rate</string>
+    <string name="level_bpreadings">Level</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
+    <string name="name">Name</string>
+    <string name="duration">Duration</string>
+    <string name="dosage">Dosage</string>
+    <string name="weight_in_kgs">Weight in Kgs</string>
+    <string name="height_in_cm">Height in Cm</string>
+    <string name="update_prescribed_medication"><u>Update Prescribed Medication</u></string>
 </resources>
