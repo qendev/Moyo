@@ -31,9 +31,11 @@
                 android:textSize="16sp" />
 
             <EditText
+                android:id="@+id/editText_weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:inputType="number"
                 android:layout_marginRight="8dp"
                 android:hint="weight in kgs"
                 android:gravity="center_horizontal"
@@ -58,16 +60,63 @@
                 android:textSize="16sp" />
 
             <EditText
+                android:id="@+id/editText_height"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:inputType="number"
                 android:hint="height in cm"
                 android:gravity="center_horizontal"
                 android:textColorHint="@color/textColor_grey" />
 
 
         </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/button_calculate_bmi"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/round_cornerbutton_background"
+            android:fontFamily="@font/rockoultraflf"
+            android:text="Calculate Bmi"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/linearlayout_updatepatientdata" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="@font/rockoultraflf"
+                android:text="Bmi"
+                android:textColor="@color/text_white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView_BMI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:textColor="@color/text_white"
+                android:text="...."
+                android:inputType="number"
+                android:gravity="center_horizontal" />
+
+
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/button_updatepaientdata"

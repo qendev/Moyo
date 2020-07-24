@@ -33,62 +33,62 @@
             android:weightSum="2"
             android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="vertical">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:text="@string/date"
-                    android:textColor="@color/text_white"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/rockoultraflf"/>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="start"-->
+<!--                    android:text="@string/date"-->
+<!--                    android:textColor="@color/text_white"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:fontFamily="@font/rockoultraflf"/>-->
 
-                <EditText
-                    android:id="@+id/editText_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:hint="date"
-                    android:textColorHint="@color/textColor_grey"
-                    android:inputType="text"/>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:text="@string/time"
-                    android:textColor="@color/text_white"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/rockoultraflf"/>
-
-                <EditText
-                    android:id="@+id/editText_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:hint="time"
-                    android:textColorHint="@color/textColor_grey"
-                    android:inputType="text"/>
+<!--                <EditText-->
+<!--                    android:id="@+id/editText_date"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    android:hint="date"-->
+<!--                    android:textColorHint="@color/textColor_grey"-->
+<!--                    android:inputType="text"/>-->
 
 
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="start"-->
+<!--                    android:text="@string/time"-->
+<!--                    android:textColor="@color/text_white"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:fontFamily="@font/rockoultraflf"/>-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/editText_time"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    android:hint="time"-->
+<!--                    android:textColorHint="@color/textColor_grey"-->
+<!--                    android:inputType="text"/>-->
 
 
 
-            </LinearLayout>
+
+
+<!--            </LinearLayout>-->
 
 
         </LinearLayout>

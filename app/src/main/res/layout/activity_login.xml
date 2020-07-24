@@ -45,18 +45,20 @@
 
 
         <EditText
+            android:id="@+id/editText_signin_email"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:background="@drawable/edittext_roundcorner_background"
             android:fontFamily="@font/rockoultraflf"
             android:gravity="center"
-            android:hint="Username"
+            android:hint="Email"
             android:inputType="text"
             android:textColorHint="@color/textColor_black"
             android:textSize="16sp" />
 
 
         <EditText
+            android:id="@+id/editText_signin_password"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
