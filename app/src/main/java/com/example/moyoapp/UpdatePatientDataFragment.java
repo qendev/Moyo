@@ -87,6 +87,7 @@ public class UpdatePatientDataFragment extends Fragment {
 
            @Override
            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
                Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
 
            }
