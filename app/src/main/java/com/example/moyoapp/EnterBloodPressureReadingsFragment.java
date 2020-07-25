@@ -46,6 +46,7 @@ public class EnterBloodPressureReadingsFragment extends Fragment {
         editText_heartrate=view.findViewById(R.id.editText_heartrate);
         editText_systolic_diastolic=view.findViewById(R.id.editText_systolic_diastolic);
         button_updaterecords=view.findViewById(R.id.button_updaterecords);
+
         button_updaterecords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

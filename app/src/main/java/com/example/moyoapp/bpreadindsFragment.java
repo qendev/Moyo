@@ -15,8 +15,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import adapters.Adapter_Bp_Readings;
 import models.response.BpReadings;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -53,17 +53,8 @@ public class bpreadindsFragment extends Fragment {
 
         // specify an adapter (see also next example)
 
-        ArrayList<BpReadings> bpReadingsArrayList=new ArrayList<>();
-        bpReadingsArrayList.add(new BpReadings("20","100"));
-        bpReadingsArrayList.add(new BpReadings("20","200"));
-        bpReadingsArrayList.add(new BpReadings("26","100"));
 
-        Adapter_Bp_Readings adapter_bp_readings = new Adapter_Bp_Readings(bpReadingsArrayList);
-        recyclerView_bpreadings.setAdapter(adapter_bp_readings);
-        //recyclerview
-//        getBpReadings(token,patient_id);
-
-
+        getBpReadings(token, patient_id);
         return view;
 
     }
@@ -74,7 +65,12 @@ public class bpreadindsFragment extends Fragment {
         arrayListCall.enqueue(new Callback<ArrayList<BpReadings>>() {
             @Override
             public void onResponse(Call<ArrayList<BpReadings>> call, Response<ArrayList<BpReadings>> response) {
+
                 Toast.makeText(getContext(), response.message(), Toast.LENGTH_SHORT).show();
+                        ArrayList<BpReadings> bpReadingsArrayList=response.body();
+        Adapter_Bp_Readings adapter_bp_readings = new Adapter_Bp_Readings(bpReadingsArrayList);
+        recyclerView_bpreadings.setAdapter(adapter_bp_readings);
+//                recyclerview
 
             }
 

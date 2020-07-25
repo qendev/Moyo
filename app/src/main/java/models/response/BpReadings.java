@@ -2,20 +2,14 @@ package models.response;
 
 public class BpReadings {
 
-    private String height;
-    private String weight;
+    private String systolic_diastolic;
+    private String heart_rate;
 
-
-    public BpReadings(String height, String weight) {
-        this.height = height;
-        this.weight = weight;
+    public String getSystolic_diastolic() {
+        return systolic_diastolic;
     }
 
-    public String getHeight() {
-        return height;
-    }
-
-    public String getWeight() {
-        return weight;
+    public String getHeart_rate() {
+        return heart_rate;
     }
 }

@@ -98,9 +98,6 @@ import services.RetrofitRequest;
             @Override
             public void onFailure(Call<ResponseLogin> call, Throwable t) {
 
-                Intent intent = new Intent(
-                        LoginActivity.this,MainActivity.class);
-                startActivity(intent);
                 Toast.makeText(LoginActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
