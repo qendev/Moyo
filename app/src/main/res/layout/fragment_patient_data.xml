@@ -7,236 +7,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".PatientDataFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView_patientdata"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:weightSum="3"
+        android:text="Patient Data"
+        android:textSize="20sp"
+        android:textColor="@color/text_white"
+        android:fontFamily="@font/rockoultraflf"
         app:layout_constraintTop_toTopOf="parent"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/weight"
-                android:textColor="@color/text_white"
-                android:textSize="16sp"
-                android:fontFamily="@font/rockoultraflf"/>
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="weight"
-                android:layout_marginTop="16dp"
-                android:textColorHint="@color/textColor_grey"
-                android:inputType="text"/>
-
-
-
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/height"
-                android:textColor="@color/text_white"
-                android:textSize="16sp"
-                android:fontFamily="@font/rockoultraflf"/>
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="height"
-                android:layout_marginTop="16dp"
-                android:textColorHint="@color/textColor_grey"
-                android:inputType="text"/>
-
-
-
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BMI"
-                android:textColor="@color/text_white"
-                android:textSize="16sp"
-                android:fontFamily="@font/rockoultraflf"/>
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="bmi"
-                android:layout_marginTop="16dp"
-                android:textColorHint="@color/textColor_grey"
-                android:inputType="text"/>
-
-
-
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearlayout_prescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Prescription Medication"
-            android:textColor="@color/text_white"
-            android:fontFamily="@font/rockoultraflf"
-            android:textSize="20sp"
-            android:layout_gravity="center_horizontal"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:weightSum="3"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/name"
-                    android:textColor="@color/text_white"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/rockoultraflf"/>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="name"
-                    android:inputType="text"
-                    android:textColorHint="@color/textColor_grey"
-                    android:layout_marginTop="16dp"/>
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dosage"
-                    android:textColor="@color/text_white"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/rockoultraflf"/>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="dosage"
-                    android:inputType="number"
-                    android:textColorHint="@color/textColor_grey"
-                    android:layout_marginTop="16dp"/>
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/duration"
-                    android:textColor="@color/text_white"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/rockoultraflf"/>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="duration"
-                    android:inputType="text"
-                    android:textColorHint="@color/textColor_grey"
-                    android:layout_marginTop="16dp"/>
-
-
-
-            </LinearLayout>
-
-
-
-
-
-
-
-        </LinearLayout>
-
-
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/button_updatepatientdata"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/linearlayout_prescription"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/round_cornerbutton_background"
-        android:fontFamily="@font/rockoultraflf"
-        android:text="Update Data"
-        android:textAllCaps="false"
-        android:textColor="#000"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:layout_marginTop="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_patientdata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView_patientdata"/>
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-package com.example.moyoapp;
+package adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.moyoapp.R;
 
 import java.util.ArrayList;
 
@@ -41,15 +43,18 @@ public class Adapter_Bp_Readings extends RecyclerView.Adapter<Adapter_Bp_Reading
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewWeight;
+
+        TextView textViewSystolicDiastolic,textViewHeartRate;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textViewWeight=itemView.findViewById(R.id.textViewWeight);
+            textViewSystolicDiastolic=itemView.findViewById(R.id.textViewSystolicDiastolic);
+            textViewHeartRate=itemView.findViewById(R.id.textViewHeartRate);
         }
 
         public void bind(BpReadings bpReadings){
-            textViewWeight.setText(bpReadings.getWeight());
+            textViewSystolicDiastolic.setText(bpReadings.getSystolic_diastolic());
+            textViewHeartRate.setText(bpReadings.getHeart_rate());
         }
     }
 

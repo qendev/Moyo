@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_moyoapp_Color"
+    tools:context=".UpdatePatientDataFragment">
+
+    <LinearLayout
+        android:id="@+id/linearlayout_updatepatientdata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="@font/rockoultraflf"
+                android:text="@string/weight_in_kgs"
+                android:textColor="@color/text_white"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editText_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:inputType="number"
+                android:layout_marginRight="8dp"
+                android:hint="weight in kgs"
+                android:gravity="center_horizontal"
+                android:textColorHint="@color/textColor_grey" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="@font/rockoultraflf"
+                android:text="@string/height_in_cm"
+                android:textColor="@color/text_white"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editText_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:inputType="number"
+                android:hint="height in cm"
+                android:gravity="center_horizontal"
+                android:textColorHint="@color/textColor_grey" />
+
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/button_calculate_bmi"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/round_cornerbutton_background"
+            android:fontFamily="@font/rockoultraflf"
+            android:text="Calculate Bmi"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/linearlayout_updatepatientdata" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="@font/rockoultraflf"
+                android:text="Bmi"
+                android:textColor="@color/text_white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView_BMI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:textColor="@color/text_white"
+                android:text="...."
+                android:inputType="number"
+                android:gravity="center_horizontal" />
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/button_updatepaientdata"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/round_cornerbutton_background"
+            android:fontFamily="@font/rockoultraflf"
+            android:text="Update"
+            android:textAllCaps="false"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/linearlayout_updatepatientdata" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:text="@string/update_prescribed_medication"
+                android:textColor="@color/text_white"
+                android:textSize="20sp"
+                android:fontFamily="@font/rockoultraflf"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp" />
+
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_rightside"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/circular_background"/>
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
