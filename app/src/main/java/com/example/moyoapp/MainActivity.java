@@ -17,7 +17,6 @@ import fragments.BpReadingsFragments;
 import fragments.DataFragment;
 import fragments.DoctorFragment;
 import fragments.SettingsFragment;
-import fragments.StatisticsFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -60,11 +59,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_bp_redeadings:
                 getSupportFragmentManager().beginTransaction().replace(R.id.container,
                         new BpReadingsFragments()).commit();
-                break;
-
-            case R.id.nav_statistics:
-                getSupportFragmentManager().beginTransaction().replace(R.id.container,
-                        new StatisticsFragment()).commit();
                 break;
 
             case R.id.nav_data:
