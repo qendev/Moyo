@@ -11,7 +11,6 @@ import android.widget.TextView;
 public class FirstScreenActivity extends AppCompatActivity {
 
     private Button loginbutton;
-    private TextView signuptextView;
 
 
     @Override
@@ -23,7 +22,6 @@ public class FirstScreenActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         loginbutton = findViewById(R.id.button_login);
-        signuptextView = findViewById(R.id.textView_signup);
 
 
         loginbutton.setOnClickListener(new View.OnClickListener() {
@@ -34,12 +32,6 @@ public class FirstScreenActivity extends AppCompatActivity {
             }
         });
 
-        signuptextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(FirstScreenActivity.this,SignUpActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 }

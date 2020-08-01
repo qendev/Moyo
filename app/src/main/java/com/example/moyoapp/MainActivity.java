@@ -15,7 +15,8 @@ import com.google.android.material.navigation.NavigationView;
 
 import fragments.BpReadingsFragments;
 import fragments.DataFragment;
-import fragments.DoctorFragment;
+//import fragments.DoctorFragment;
+import fragments.MyNewDoctorFragment;
 import fragments.SettingsFragment;
 import fragments.StatisticsFragment;
 
@@ -72,9 +73,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         new DataFragment()).commit();
                 break;
 
-            case R.id.nav_doctor:
+            case R.id.nav_my_doctor:
                 getSupportFragmentManager().beginTransaction().replace(R.id.container,
-                        new DoctorFragment()).commit();
+                        new MyNewDoctorFragment()).commit();
                 break;
 
             case R.id.nav_settings:

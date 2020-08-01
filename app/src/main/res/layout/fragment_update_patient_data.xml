@@ -109,6 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:fontFamily="@font/rockoultraflf"
                 android:textColor="@color/text_white"
                 android:text="...."
                 android:inputType="number"

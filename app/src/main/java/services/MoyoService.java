@@ -4,11 +4,13 @@ import java.util.ArrayList;
 
 import models.Post.PostBpReading;
 import models.Post.PostPatientData;
+import models.Post.PostRequestDoctor;
 import models.Post.SignIn;
 import models.RegisterUSer;
 import models.response.BpReadings;
 import models.response.PatientData;
 import models.response.ResponseLogin;
+import models.response.ResponseRequestDoctor;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -38,4 +40,7 @@ public interface MoyoService {
 
     @GET("patient-data/{userId}")
     Call<ArrayList<PatientData>> getPatientData(@Header("Authorization") String token, @Path("userId") String userId);
+
+    @POST("request-doctor")
+    Call<ResponseRequestDoctor> postRequestDoctor(@Header("Authorization") String token, @Body PostRequestDoctor postRequestDoctor);
 }
