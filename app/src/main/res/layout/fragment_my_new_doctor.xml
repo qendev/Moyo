@@ -56,7 +56,7 @@
                 android:fontFamily="@font/rockoultraflf"
                 android:text="Cardiologist M.D"
                 android:textColor="@color/text_white"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 

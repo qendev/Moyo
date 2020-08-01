@@ -29,6 +29,8 @@ public class MyNewDoctorFragment extends Fragment {
         img_call_mydoctor =view.findViewById(R.id.img_call_mydoctor);
         img_message_mydoctor = view.findViewById(R.id.img_message_mydoctor);
 
+
+        //launch sms application with an intent
         img_message_mydoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,6 +40,7 @@ public class MyNewDoctorFragment extends Fragment {
             }
         });
 
+        //launch dialer with an intent
         img_call_mydoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
