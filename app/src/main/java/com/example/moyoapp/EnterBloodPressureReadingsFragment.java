@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import models.Post.PostBpReading;
@@ -30,6 +31,7 @@ public class EnterBloodPressureReadingsFragment extends Fragment {
     EditText editText_heartrate,editText_systolic_diastolic;
     Button button_updaterecords;
     SharedPreferences sharedPref;
+    ProgressBar progressBar_enterbloodpressurereadings;
 
 
     @Override
@@ -46,12 +48,12 @@ public class EnterBloodPressureReadingsFragment extends Fragment {
         editText_heartrate=view.findViewById(R.id.editText_heartrate);
         editText_systolic_diastolic=view.findViewById(R.id.editText_systolic_diastolic);
         button_updaterecords=view.findViewById(R.id.button_updaterecords);
+        progressBar_enterbloodpressurereadings =view.findViewById(R.id.progressBar_enterbloodpressurereadings);
 
         button_updaterecords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
+                progressBar_enterbloodpressurereadings.setVisibility(View.VISIBLE);
                 sharedPref = getContext().getSharedPreferences(MyConfig.SHARED_PREF_USER, Context.MODE_PRIVATE);
                 String token = sharedPref.getString("token", "");
 
@@ -75,7 +77,12 @@ public class EnterBloodPressureReadingsFragment extends Fragment {
         responseSubmitBpReadings.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                Toast.makeText(getContext(), response.message(), Toast.LENGTH_SHORT).show();
+                progressBar_enterbloodpressurereadings.setVisibility(View.GONE);
+                Toast.makeText(getActivity(),"Records Updated Succesfully!",Toast.LENGTH_LONG).show();
+
+
+
+//                Toast.makeText(getContext(), response.message(), Toast.LENGTH_SHORT).show();
             }
 
             @Override

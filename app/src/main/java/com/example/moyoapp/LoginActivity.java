@@ -46,15 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         progressBar.setVisibility(View.GONE);
 
 
-
-
-
-
     }
-
-
-
-
 
 
     private void setView() {
@@ -111,13 +103,26 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(
                             LoginActivity.this, MainActivity.class);
                     startActivity(intent);
+                }else{
+                    progressBar.setVisibility(View.GONE);
+
+                    Toast.makeText(LoginActivity.this, "Login Failed!", Toast.LENGTH_LONG).show();
+
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseLogin> call, Throwable t) {
 
-                Toast.makeText(LoginActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+
+
+//                Toast.makeText(LoginActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Login Failed!!!Check Your Internet Connection...", Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.GONE);
+
+
+
+
             }
         });
 

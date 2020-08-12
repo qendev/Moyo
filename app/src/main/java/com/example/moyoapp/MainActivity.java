@@ -63,10 +63,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         new BpReadingsFragments()).commit();
                 break;
 
-            case R.id.nav_statistics:
-                getSupportFragmentManager().beginTransaction().replace(R.id.container,
-                        new StatisticsFragment()).commit();
-                break;
+//            case R.id.nav_statistics:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.container,
+//                        new StatisticsFragment()).commit();
+//                break;
 
             case R.id.nav_data:
                 getSupportFragmentManager().beginTransaction().replace(R.id.container,

@@ -51,7 +51,7 @@ public class PatientDataFragment extends Fragment {
 
         String patient_id= sharedPref.getString("id", "");
 
-        getPatientData(token,patient_id);
+
         return view;
 
 

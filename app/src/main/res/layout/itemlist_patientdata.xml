@@ -7,76 +7,254 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".PatientDataFragment">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        android:padding="8dp"
-        android:weightSum="3"
-        android:orientation="horizontal">
-
+        android:orientation="vertical">
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/linearlayout_customborder"
-            android:gravity="center_horizontal"
-            android:layout_marginRight="8dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:padding="8dp"
+            android:weightSum="3"
+            android:orientation="horizontal">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/weight"
-                android:textColor="@color/text_white"
-                android:textSize="16sp"
-                android:fontFamily="@font/rockoultraflf"/>
+                android:background="@drawable/linearlayout_customborder"
+                android:gravity="center_horizontal"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView_weight"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/weight"
+                    android:textColor="@color/text_white"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/rockoultraflf"/>
+
+                <TextView
+                    android:id="@+id/textView_weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_white"
+                    android:text="20"
+                    android:fontFamily="@font/rockoultraflf"
+                    android:layout_marginTop="16dp" />
+
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_white"
-                android:text="20"
-                android:fontFamily="@font/rockoultraflf"
-                android:layout_marginTop="16dp" />
+                android:background="@drawable/linearlayout_customborder"
+                android:gravity="center_horizontal"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/height"
+                    android:textColor="@color/text_white"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/rockoultraflf"/>
+
+                <TextView
+                    android:id="@+id/textView_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textColor="@color/text_white"
+                    android:fontFamily="@font/rockoultraflf"
+                    android:layout_marginTop="16dp"
+                    />
 
 
 
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:background="@drawable/linearlayout_customborder"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BMI"
+                    android:textColor="@color/text_white"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/rockoultraflf"/>
+
+                <TextView
+                    android:id="@+id/textView_bmi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="20"
+                    android:textColor="@color/text_white"
+                    android:fontFamily="@font/rockoultraflf" />
+
+
+
+
+
+            </LinearLayout>
 
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/linearlayoutPrescriptionsDetails"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/linearlayout_customborder"
-            android:gravity="center_horizontal"
-            android:layout_marginRight="8dp"
-            android:layout_weight="1"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/linearlayout_patientdata"
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/textView_medication"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/height"
-                android:textColor="@color/text_white"
-                android:textSize="16sp"
-                android:fontFamily="@font/rockoultraflf"/>
-
-            <TextView
-                android:id="@+id/textView_height"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="20"
-                android:textColor="@color/text_white"
+                android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/rockoultraflf"
-                android:layout_marginTop="16dp"
+                android:text="@string/medication"
+                android:textColor="@color/text_white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/linearlayout_prescriptionmedication"
                 />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:weightSum="3"
+                app:layout_constraintTop_toBottomOf="@id/textView_medication">
 
 
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/linearlayout_customborder"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/rockoultraflf"
+                        android:text="Name"
+                        android:textColor="@color/text_white" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/linearlayout_customborder"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/rockoultraflf"
+                        android:text="Dosage"
+                        android:textColor="@color/text_white" />
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/linearlayout_customborder"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/rockoultraflf"
+                        android:text="Duration"
+                        android:textColor="@color/text_white" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_prescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearlayout_prescriptionmedication"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/linearlayout_customborder"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/rockoultraflf"
+                android:text="Declophenac"
+                android:textColor="@color/text_white" />
 
 
         </LinearLayout>
@@ -84,36 +262,48 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:background="@drawable/linearlayout_customborder"
+            android:gravity="center"
+            android:layout_marginLeft="8dp"
             android:layout_weight="1"
+            android:background="@drawable/linearlayout_customborder"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="BMI"
-                android:textColor="@color/text_white"
-                android:textSize="16sp"
-                android:fontFamily="@font/rockoultraflf"/>
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/rockoultraflf"
+                android:text="1x2"
+                android:textColor="@color/text_white" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/linearlayout_customborder"
+            android:orientation="vertical">
+
 
             <TextView
-                android:id="@+id/textView_bmi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="20"
-                android:textColor="@color/text_white"
-                android:fontFamily="@font/rockoultraflf" />
-
-
-
+                android:fontFamily="@font/rockoultraflf"
+                android:text="1 Week"
+                android:textColor="@color/text_white" />
 
 
         </LinearLayout>
 
 
     </LinearLayout>
+
+
 
 
 

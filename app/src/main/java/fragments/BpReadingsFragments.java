@@ -36,6 +36,8 @@ public class BpReadingsFragments extends Fragment {
         bpadapter = new Bp_ReadingsAdapter(getActivity().getSupportFragmentManager());
         bpadapter.addFragment(new EnterBloodPressureReadingsFragment(), "Enter Blood Pressure");
         bpadapter.addFragment(new bpreadindsFragment(), "Blood Pressure Readings");
+        bpadapter.addFragment(new StatisticsFragment(), "Statistics");
+
 
         bpviewPager.setAdapter(bpadapter);
         bptabLayout.setupWithViewPager(bpviewPager);
