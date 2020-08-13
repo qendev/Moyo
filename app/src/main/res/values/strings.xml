@@ -34,7 +34,7 @@
     <string name="obese_class_ii">obese_class_ii</string>
     <string name="obese_class_iii">obese_class_iii</string>
     <string name="privacy_policy"><u>Privacy Policy</u></string>
-    <string name="medication"><u>Medication</u></string>
+    <string name="medication"><u>Prescribed Medication</u></string>
     <string name="location">Location:</string>
     <string name="phone">Phone:</string>
     <string name="email">Email:</string>

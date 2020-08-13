@@ -43,6 +43,7 @@
             app:layout_constraintTop_toBottomOf="@id/img_doctor">
 
             <TextView
+                android:id="@+id/textViewname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/rockoultraflf"
@@ -93,6 +94,7 @@
                 android:fontFamily="@font/rockoultraflf"/>
 
             <TextView
+                android:id="@+id/textViewlocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -125,6 +127,7 @@
                 android:fontFamily="@font/rockoultraflf"/>
 
             <TextView
+                android:id="@+id/textViewphone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -183,6 +186,7 @@
                 android:fontFamily="@font/rockoultraflf"/>
 
             <TextView
+                android:id="@+id/textViewemail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -215,6 +219,7 @@
                 android:fontFamily="@font/rockoultraflf"/>
 
             <TextView
+                android:id="@+id/textViewhospital"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

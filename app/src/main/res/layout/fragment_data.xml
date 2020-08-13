@@ -4,41 +4,44 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/main_moyoapp_Color"
-    tools:context="fragments.BpReadingsFragments">
+   >
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textView_patientdata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Patient Data"
+        android:textSize="20sp"
+        android:textColor="@color/text_white"
+        android:fontFamily="@font/rockoultraflf"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_patientdata"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView_patientdata"/>
+
+    <TextView
+        android:id="@+id/textView_medication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/rockoultraflf"
+        android:text="@string/medication"
+        android:textColor="@color/text_white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerview_patientdata"
+        />
 
 
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout_data"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="?actionBarSize"
-            app:tabGravity="fill"
-            app:tabTextColor="@color/textColor_black"
-            app:tabIndicatorColor="#fff"
-            app:tabTextAppearance="@style/TabLayoutTextFont"
-            app:tabIndicatorHeight="4dp"
-            app:tabBackground="@color/colorPrimary"
-            app:tabMode="fixed">
-
-
-
-        </com.google.android.material.tabs.TabLayout>
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPager_data"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-
-        </androidx.viewpager.widget.ViewPager>
-    </LinearLayout>
 
 
 

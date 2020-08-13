@@ -10,6 +10,8 @@ import models.RegisterUSer;
 import models.response.BpReadings;
 import models.response.PatientData;
 import models.response.ResponseLogin;
+import models.response.ResponseMyDoctor;
+import models.response.ResponseNewPatientData;
 import models.response.ResponseRequestDoctor;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -43,4 +45,11 @@ public interface MoyoService {
 
     @POST("request-doctor")
     Call<ResponseRequestDoctor> postRequestDoctor(@Header("Authorization") String token, @Body PostRequestDoctor postRequestDoctor);
+
+    @GET("patient-prescription/{userId}")
+    Call<ArrayList<ResponseNewPatientData>> getNewPatientData(@Header("Authorization") String token, @Path("userId") String userId);
+
+    @GET("doctors/{userId}")
+    Call<ResponseMyDoctor>getMyDoctor(@Header("Authorization") String token, @Path("userId") String userId);
+
 }
