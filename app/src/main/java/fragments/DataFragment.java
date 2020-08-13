@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.moyoapp.EnterBloodPressureReadingsFragment;
 import com.example.moyoapp.PatientDataFragment;
@@ -100,7 +101,20 @@ public class DataFragment extends Fragment {
             @Override
             public void onResponse(Call<ArrayList<ResponseNewPatientData>> call, Response<ArrayList<ResponseNewPatientData>> response) {
                 Log.e("ken",response.body().toString());
-                recyclerview_patientdata.setAdapter(new AdapterNewPatientData(response.body()));
+                if(response.isSuccessful()){
+                    if (response.body()==null) Toast.makeText(getContext(), "You don't have n", Toast.LENGTH_SHORT).show();
+                    else{
+                        if(response.body().isEmpty())
+                            Toast.makeText(getContext(), "you have no records!", Toast.LENGTH_SHORT).show();
+                        else{
+                            saveToSharedprefference(response.body().get(0).getDoctor_id());
+                            recyclerview_patientdata.setAdapter(new AdapterNewPatientData(response.body()));
+                        }
+                    }
+
+
+                }
+
 
             }
 
@@ -113,6 +127,11 @@ public class DataFragment extends Fragment {
         });
 
     }
-
+    public void saveToSharedprefference(String doctor_id) {
+        SharedPreferences sharedPref =getContext(). getSharedPreferences(MyConfig.SHARED_PREF_USER, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("doctor_id", doctor_id);
+        editor.apply();
+    }
 
 }

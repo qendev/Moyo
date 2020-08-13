@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.moyoapp.R;
 
@@ -45,29 +46,15 @@ public class MyNewDoctorFragment extends Fragment {
 
         SharedPreferences sharedPref = getContext().getSharedPreferences(MyConfig.SHARED_PREF_USER, Context.MODE_PRIVATE);
         String token = sharedPref.getString("token", "");
+        String id = sharedPref.getString("id", "");
+        String doctor_id=sharedPref.getString("doctor_id","");
 
-        String doctor_id = sharedPref.getString("id", "");
         getMyDoctor(token, doctor_id);
 
 
-        //launch sms application with an intent
-        img_message_mydoctor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent sendIntent = new Intent(Intent.ACTION_VIEW);
-                sendIntent.setData(Uri.parse("sms:"));
-                startActivity(sendIntent);
-            }
-        });
 
-        //launch dialer with an intent
-        img_call_mydoctor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent("android.intent.action.DIAL");
-                startActivity(intent);
-            }
-        });
+
+
         String testid = "5f0af6ad3b700e08d8fc91d3";
         getMyDoctor(token, testid);
 
@@ -96,13 +83,37 @@ public class MyNewDoctorFragment extends Fragment {
             public void onResponse(Call<ResponseMyDoctor> call, Response<ResponseMyDoctor> response) {
                 Log.e("daktari", String.valueOf(response.body()));
                 if (response.isSuccessful()) {
-                    textViewname.setText(response.body().getName());
-                    textViewlocation.setText(response.body().getLocation());
-                    textViewphone.setText(response.body().getPhone());
-                    textViewemail.setText(response.body().getEmail());
-                    textViewhospital.setText(response.body().getHospital());
+
+                    if (response.body()==null) Toast.makeText(getContext(), "Details not availbale", Toast.LENGTH_SHORT).show();
+                    else {
+                        textViewname.setText(response.body().getName());
+                        //launch dialer with an intent
+                        img_call_mydoctor.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent makeCallintent = new Intent("android.intent.action.DIAL");
+                                makeCallintent.setData(Uri.parse("tel:" + response.body().getPhone()));
+                                startActivity(makeCallintent);
+                            }
+                        });
+                        //launch sms application with an intent
+                        img_message_mydoctor.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent sendSmsIntent = new Intent(Intent.ACTION_VIEW);
+                                sendSmsIntent.setData(Uri.parse("sms:" + response.body().getPhone()));
+                                startActivity(sendSmsIntent);
+                            }
+                        });
+                        textViewlocation.setText(response.body().getLocation());
+                        textViewphone.setText(response.body().getPhone());
+                        textViewemail.setText(response.body().getEmail());
+                        textViewhospital.setText(response.body().getHospital());
+                    }
+
 
                 }
+
 
 
             }
@@ -110,6 +121,9 @@ public class MyNewDoctorFragment extends Fragment {
             @Override
             public void onFailure(Call<ResponseMyDoctor> call, Throwable t) {
                 Log.e("daktarifailed", t.toString());
+                Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+
+
 
             }
         });

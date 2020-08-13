@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     ResponseLogin responseLogin = response.body();
                     //todo
-//                    Save token and id from reponse
+//                    get token and id from reponse
                     String token = responseLogin.getToken();
                     String userId = responseLogin.getUser().getId();
 
