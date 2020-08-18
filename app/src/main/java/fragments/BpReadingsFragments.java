@@ -9,10 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.moyoapp.EnterBloodPressureReadingsFragment;
 import com.example.moyoapp.R;
 import adapters.Bp_ReadingsAdapter;
-import com.example.moyoapp.bpreadindsFragment;
+
 import com.google.android.material.tabs.TabLayout;
 
 public class BpReadingsFragments extends Fragment {

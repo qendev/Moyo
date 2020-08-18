@@ -9,8 +9,8 @@
 //import android.view.View;
 //import android.view.ViewGroup;
 //
-//import com.example.moyoapp.MyDoctorFragment;
-//import com.example.moyoapp.PatientDataFragment;
+//import fragments.MyDoctorFragment;
+//import fragments.PatientDataFragment;
 //import com.example.moyoapp.R;
 ////import com.example.moyoapp.SendRequestFragment;
 //import com.google.android.material.tabs.TabLayout;
