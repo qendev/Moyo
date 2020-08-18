@@ -73,8 +73,6 @@ public class EnterPhoneActivity extends AppCompatActivity {
             public void onClick(View v) {
                 progressBar.setVisibility(View.VISIBLE);
 
-
-
                 String phonenumber = editText_enterphonenumber.getText().toString();
                 phonenumber = phonenumber.substring(1);
                 moyoService = RetrofitRequest.getRetrofitInstance().create(MoyoService.class);

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.chaos.view.PinView;
 
@@ -27,6 +28,7 @@ import services.RetrofitRequest;
 public class VerifyActivity extends AppCompatActivity {
     private Button buttonLogin;
     private PinView pinViewProfileChange;
+    private ProgressBar progressBarlogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,9 @@ public class VerifyActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBarlogin.setVisibility(View.VISIBLE);
+
+
 
                 SharedPreferences sharedPref = getSharedPreferences(MyConfig.SHARED_PREF_USER, Context.MODE_PRIVATE);
                 String phone = sharedPref.getString("phone", "");
@@ -52,20 +57,24 @@ public class VerifyActivity extends AppCompatActivity {
 
                         if (response.isSuccessful()){
 
+
 //                            get token and id from reponse
                     String token = response.body().getToken();
                     String userId = response.body().getUser().getId();
 
                     //save to shareprefference
                     saveToSharedprefference(token, userId);
-
+                            progressBarlogin.setVisibility(View.GONE);
                             Intent intent = new Intent(VerifyActivity.this,MainActivity.class);
                             startActivity(intent);
+                            Toast.makeText(VerifyActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+
                         }
                     }
 
                     @Override
                     public void onFailure(Call<ResponseLogin> call, Throwable t) {
+                        Toast.makeText(VerifyActivity.this, "Login Failed!Check your Internet Connection!", Toast.LENGTH_SHORT).show();
 
                     }
                 });
@@ -80,6 +89,7 @@ public class VerifyActivity extends AppCompatActivity {
     {
         buttonLogin = findViewById(R.id.buttonLogin);
         pinViewProfileChange = findViewById(R.id.pinViewProfileChange);
+        progressBarlogin = findViewById(R.id.progressBarlogin);
     }
 
     public void saveToSharedprefference(String token, String id) {
