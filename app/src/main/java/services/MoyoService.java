@@ -3,12 +3,15 @@ package services;
 import java.util.ArrayList;
 
 import models.Post.PostBpReading;
+import models.Post.PostOtp;
 import models.Post.PostPatientData;
 import models.Post.PostRequestDoctor;
+import models.Post.PostRequestOtp;
 import models.Post.SignIn;
 import models.RegisterUSer;
 import models.response.BpReadings;
 import models.response.PatientData;
+import models.response.ResponseGetOtp;
 import models.response.ResponseLogin;
 import models.response.ResponseMyDoctor;
 import models.response.ResponseNewPatientData;
@@ -16,9 +19,11 @@ import models.response.ResponseRequestDoctor;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface MoyoService {
@@ -51,5 +56,15 @@ public interface MoyoService {
 
     @GET("doctors/{userId}")
     Call<ResponseMyDoctor>getMyDoctor(@Header("Authorization") String token, @Path("userId") String userId);
+
+    @PUT("otp/update")
+    Call<ResponseGetOtp> getOtp(@Body PostRequestOtp postRequestOtp);
+
+    @POST("login")
+    Call<ResponseLogin> postOtp(@Body PostOtp postOtp);
+
+
+
+
 
 }

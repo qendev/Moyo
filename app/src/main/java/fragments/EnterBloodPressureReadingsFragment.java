@@ -1,4 +1,4 @@
-package com.example.moyoapp;
+package fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.example.moyoapp.R;
 
 import models.Post.PostBpReading;
 import models.response.ResponseLogin;

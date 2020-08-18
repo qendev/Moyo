@@ -7,7 +7,6 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,21 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.moyoapp.EnterBloodPressureReadingsFragment;
-import com.example.moyoapp.PatientDataFragment;
-import com.example.moyoapp.PatientMedicationFragment;
 import com.example.moyoapp.R;
-import com.example.moyoapp.SummaryFragment;
-import com.example.moyoapp.UpdatePatientDataFragment;
-import com.example.moyoapp.bpreadindsFragment;
-import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
 import adapters.AdapterNewPatientData;
-import adapters.Bp_ReadingsAdapter;
-import adapters.DataAdapter;
-import models.response.PatientData;
 import models.response.ResponseNewPatientData;
 import retrofit2.Call;
 import retrofit2.Callback;

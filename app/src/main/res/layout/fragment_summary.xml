@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/main_moyoapp_Color"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SummaryFragment">
+    tools:context="fragments.SummaryFragment">
 
     <LinearLayout
         android:id="@+id/linearlayout_days"

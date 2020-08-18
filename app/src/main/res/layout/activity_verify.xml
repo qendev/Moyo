@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_moyoapp_Color"
+    tools:context=".VerifyActivity">
+
+    <ImageView
+        android:id="@+id/the_logo"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/the_moyo_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/textViewtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Moyo App"
+        app:layout_constraintTop_toBottomOf="@id/the_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/text_white"
+        android:textSize="32sp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/rockoultraflf" />
+
+    <TextView
+        android:id="@+id/textViewloginpin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Your Verification Code"
+        android:textColor="@color/text_white"
+        android:textSize="24sp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/rockoultraflf"
+        app:layout_constraintTop_toBottomOf="@id/textViewtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.chaos.view.PinView
+        android:id="@+id/pinViewProfileChange"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:cursorVisible="true"
+        android:hint="Hint."
+        android:inputType="number"
+        android:padding="8dp"
+        android:textColor="@color/text_white"
+        android:textSize="18sp"
+        android:fontFamily="@font/rockoultraflf"
+        android:textStyle="bold"
+        app:cursorColor="@color/textColor_black"
+        app:cursorWidth="2dp"
+        app:hideLineWhenFilled="true"
+        app:itemCount="4"
+        app:itemHeight="48dp"
+        app:itemRadius="4dp"
+        app:itemSpacing="12dp"
+        app:itemWidth="48dp"
+        app:lineColor="@color/colorBorder"
+        app:lineWidth="2dp"
+        app:viewType="rectangle"
+        android:layout_margin="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewloginpin"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/pinViewProfileChange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/rockoultraflf"
+        android:background="@drawable/round_cornerbutton_background"
+        android:text="Login"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
