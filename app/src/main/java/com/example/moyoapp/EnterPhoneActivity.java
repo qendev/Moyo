@@ -14,11 +14,9 @@ import android.widget.ProgressBar;
 
 import models.Post.PostRequestOtp;
 import models.response.ResponseGetOtp;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.http.Body;
 import services.MoyoService;
 import services.MyConfig;
 import services.RetrofitRequest;
@@ -71,7 +69,7 @@ public class EnterPhoneActivity extends AppCompatActivity {
         buttonVerify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkField()) {
+                if(checkphonenumberField()) {
 
 
                     progressBar.setVisibility(View.VISIBLE);
@@ -116,7 +114,7 @@ public class EnterPhoneActivity extends AppCompatActivity {
 
     }
 
-    private boolean checkField() {
+    private boolean checkphonenumberField() {
         String phonenumber;
         phonenumber = editText_enterphonenumber.getText().toString();
         if(phonenumber.isEmpty()){

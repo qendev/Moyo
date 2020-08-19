@@ -40,51 +40,65 @@ public class VerifyActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressBarlogin.setVisibility(View.VISIBLE);
+                
+                if(checkVerificationcode()) {
+
+                    progressBarlogin.setVisibility(View.VISIBLE);
 
 
+                    SharedPreferences sharedPref = getSharedPreferences(MyConfig.SHARED_PREF_USER, Context.MODE_PRIVATE);
+                    String phone = sharedPref.getString("phone", "");
+                    String pin = pinViewProfileChange.getText().toString();
 
-                SharedPreferences sharedPref = getSharedPreferences(MyConfig.SHARED_PREF_USER, Context.MODE_PRIVATE);
-                String phone = sharedPref.getString("phone", "");
-                String pin=pinViewProfileChange.getText().toString();
+                    MoyoService moyoService = RetrofitRequest.getRetrofitInstance().create(MoyoService.class);
+                    Call<ResponseLogin> responseLoginCall = moyoService.postOtp(new PostOtp(phone, pin));
+                    responseLoginCall.enqueue(new Callback<ResponseLogin>() {
+                        @Override
+                        public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
+                            Log.e("phoneNambaTest", String.valueOf(response.body()));
 
-                MoyoService moyoService = RetrofitRequest.getRetrofitInstance().create(MoyoService.class);
-                Call<ResponseLogin> responseLoginCall = moyoService.postOtp(new PostOtp(phone,pin));
-                responseLoginCall.enqueue(new Callback<ResponseLogin>() {
-                    @Override
-                    public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
-                        Log.e("phoneNambaTest",String.valueOf(response.body()));
-
-                        if (response.isSuccessful()){
+                            if (response.isSuccessful()) {
 
 
 //                            get token and id from reponse
-                    String token = response.body().getToken();
-                    String userId = response.body().getUser().getId();
+                                String token = response.body().getToken();
+                                String userId = response.body().getUser().getId();
 
-                    //save to shareprefference
-                    saveToSharedprefference(token, userId);
+                                //save to shareprefference
+                                saveToSharedprefference(token, userId);
+                                progressBarlogin.setVisibility(View.GONE);
+                                Intent intent = new Intent(VerifyActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                Toast.makeText(VerifyActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseLogin> call, Throwable t) {
+                            Toast.makeText(VerifyActivity.this, "Login Failed!Check your Internet Connection!", Toast.LENGTH_SHORT).show();
                             progressBarlogin.setVisibility(View.GONE);
-                            Intent intent = new Intent(VerifyActivity.this,MainActivity.class);
-                            startActivity(intent);
-                            Toast.makeText(VerifyActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+
 
                         }
-                    }
+                    });
 
-                    @Override
-                    public void onFailure(Call<ResponseLogin> call, Throwable t) {
-                        Toast.makeText(VerifyActivity.this, "Login Failed!Check your Internet Connection!", Toast.LENGTH_SHORT).show();
-                        progressBarlogin.setVisibility(View.GONE);
-
-
-                    }
-                });
+                }
 
 
 
             }
         });
+    }
+
+    private boolean checkVerificationcode() {
+        String verificationcode;
+        verificationcode = pinViewProfileChange.getText().toString();
+        if(verificationcode.isEmpty()){
+            pinViewProfileChange.requestFocus();
+            pinViewProfileChange.setError("Verificationcode Required!");
+            return false;
+        }else return true;
     }
 
     private void initializeViews()
