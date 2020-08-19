@@ -75,6 +75,8 @@ public class VerifyActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<ResponseLogin> call, Throwable t) {
                         Toast.makeText(VerifyActivity.this, "Login Failed!Check your Internet Connection!", Toast.LENGTH_SHORT).show();
+                        progressBarlogin.setVisibility(View.GONE);
+
 
                     }
                 });

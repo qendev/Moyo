@@ -71,44 +71,44 @@ public class EnterPhoneActivity extends AppCompatActivity {
         buttonVerify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
+                if(checkField()) {
 
-                String phonenumber = editText_enterphonenumber.getText().toString();
-                phonenumber = phonenumber.substring(1);
-                moyoService = RetrofitRequest.getRetrofitInstance().create(MoyoService.class);
-                PostRequestOtp postRequestOtp=new PostRequestOtp("+254"+phonenumber);
-                Call<ResponseGetOtp> requestOtpCall = moyoService.getOtp(postRequestOtp);
-                requestOtpCall.enqueue(new Callback<ResponseGetOtp>() {
-                    @Override
-                    public void onResponse(Call<ResponseGetOtp> call, Response<ResponseGetOtp> response) {
-                        progressBar.setVisibility(View.GONE);
 
-                        Log.e("phoneNambaTest",String.valueOf(response.body()));
+                    progressBar.setVisibility(View.VISIBLE);
 
-                        if (response.isSuccessful()){
+                    String phonenumber = editText_enterphonenumber.getText().toString();
+                    phonenumber = phonenumber.substring(1);
+                    moyoService = RetrofitRequest.getRetrofitInstance().create(MoyoService.class);
+                    PostRequestOtp postRequestOtp = new PostRequestOtp("+254" + phonenumber);
+                    Call<ResponseGetOtp> requestOtpCall = moyoService.getOtp(postRequestOtp);
+                    requestOtpCall.enqueue(new Callback<ResponseGetOtp>() {
+                        @Override
+                        public void onResponse(Call<ResponseGetOtp> call, Response<ResponseGetOtp> response) {
                             progressBar.setVisibility(View.GONE);
 
+                            Log.e("phoneNambaTest", String.valueOf(response.body()));
+
+                            if (response.isSuccessful()) {
+                                progressBar.setVisibility(View.GONE);
 
 
-                            saveToSharedprefference(response.body().getPhone(),response.body().getDoctor_id());
+                                saveToSharedprefference(response.body().getPhone(), response.body().getDoctor_id());
 
 
+                            }
+                            Intent intent = new Intent(EnterPhoneActivity.this, VerifyActivity.class);
+                            startActivity(intent);
+                            progressBar.setVisibility(View.GONE);
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseGetOtp> call, Throwable t) {
 
                         }
-                        Intent intent = new Intent(EnterPhoneActivity.this,VerifyActivity.class);
-                        startActivity(intent);
-                        progressBar.setVisibility(View.GONE);
-                    }
-
-                    @Override
-                    public void onFailure(Call<ResponseGetOtp> call, Throwable t) {
-
-                    }
-                });
+                    });
 
 
-
-
+                }
 
 
             }
@@ -116,7 +116,19 @@ public class EnterPhoneActivity extends AppCompatActivity {
 
     }
 
-//    public void LogIn(SignIn signIn) {
+    private boolean checkField() {
+        String phonenumber;
+        phonenumber = editText_enterphonenumber.getText().toString();
+        if(phonenumber.isEmpty()){
+            editText_enterphonenumber.requestFocus();
+
+            editText_enterphonenumber.setError("PhoneNumber Required!");
+            return false;
+        }else return true;
+
+    }
+
+    //    public void LogIn(SignIn signIn) {
 //        progressBar.setVisibility(View.VISIBLE);
 //
 //        moyoService = RetrofitRequest.getRetrofitInstance().create(MoyoService.class);
