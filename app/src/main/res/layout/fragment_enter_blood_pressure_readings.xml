@@ -96,14 +96,14 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="8dp"
             android:background="#fff"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:weightSum="2"
+            android:padding="8dp"
+            android:weightSum="3"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -116,20 +116,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
-                    android:layout_marginRight="8dp"
-                    android:text="@string/systolic_diastolic"
+                    android:text="Systolic"
                     android:textColor="@color/text_white"
                     android:fontFamily="@font/rockoultraflf"
                     android:textSize="16sp"/>
 
                 <EditText
-                    android:id="@+id/editText_systolic_diastolic"
+                    android:id="@+id/editText_systolic"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:hint="systolic/diastolic"
+                    android:hint="Systolic"
                     android:textColorHint="@color/textColor_grey"
-                    android:inputType="text"/>
+                    android:inputType="number"/>
 
 
 
@@ -140,6 +139,42 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="Diastolic"
+                    android:textColor="@color/text_white"
+                    android:fontFamily="@font/rockoultraflf"
+                    android:textSize="16sp"/>
+
+                <EditText
+                    android:id="@+id/editText_diastolic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Diastolic"
+                    android:textColorHint="@color/textColor_grey"
+                    android:inputType="number"/>
+
+
+
+
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -156,9 +191,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:hint="(normal/abnormal)"
+                    android:hint="heartrate"
                     android:textColorHint="@color/textColor_grey"
-                    android:inputType="text"/>
+                    android:inputType="number"/>
 
 
 

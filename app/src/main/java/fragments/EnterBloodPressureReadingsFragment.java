@@ -30,7 +30,7 @@ public class EnterBloodPressureReadingsFragment extends Fragment {
 
 
     MoyoService moyoService;
-    EditText editText_heartrate,editText_systolic_diastolic;
+    EditText editText_systolic,editText_diastolic,editText_heartrate;
     Button button_updaterecords;
     SharedPreferences sharedPref;
     ProgressBar progressBar_enterbloodpressurereadings;
@@ -47,8 +47,10 @@ public class EnterBloodPressureReadingsFragment extends Fragment {
 
     private void setViews(View view) {
 
+        editText_systolic=view.findViewById(R.id.editText_systolic);
+        editText_diastolic = view.findViewById(R.id.editText_diastolic);
         editText_heartrate=view.findViewById(R.id.editText_heartrate);
-        editText_systolic_diastolic=view.findViewById(R.id.editText_systolic_diastolic);
+
         button_updaterecords=view.findViewById(R.id.button_updaterecords);
         progressBar_enterbloodpressurereadings =view.findViewById(R.id.progressBar_enterbloodpressurereadings);
 
@@ -61,7 +63,7 @@ public class EnterBloodPressureReadingsFragment extends Fragment {
 
                 String patient_id= sharedPref.getString("id", "");
 
-                String sytolic_diastolic=editText_systolic_diastolic.getText().toString();
+                String sytolic_diastolic=editText_systolic.getText().toString();
                 String heart_rate=editText_heartrate.getText().toString();
 
 
@@ -80,6 +82,7 @@ public class EnterBloodPressureReadingsFragment extends Fragment {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 progressBar_enterbloodpressurereadings.setVisibility(View.GONE);
+                clearRecords();
                 Toast.makeText(getActivity(),"Records Updated Succesfully!",Toast.LENGTH_LONG).show();
 
 
@@ -92,6 +95,13 @@ public class EnterBloodPressureReadingsFragment extends Fragment {
                 Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void clearRecords() {
+        String systolic,diastolic,heartrate;
+        editText_systolic.getText().clear();
+        editText_diastolic.getText().clear();
+        editText_heartrate.getText().clear();
     }
 
 

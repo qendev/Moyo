@@ -48,7 +48,7 @@ public class Adapter_Bp_Readings extends RecyclerView.Adapter<Adapter_Bp_Reading
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textViewSystolicDiastolic=itemView.findViewById(R.id.textViewSystolicDiastolic);
+            textViewSystolicDiastolic=itemView.findViewById(R.id.textViewSystolic);
             textViewHeartRate=itemView.findViewById(R.id.textViewHeartRate);
         }
 
