@@ -11,6 +11,7 @@ import models.Post.SignIn;
 import models.RegisterUSer;
 import models.response.BpReadings;
 import models.response.PatientData;
+import models.response.ResponseBloodPressure;
 import models.response.ResponseBpReadings;
 import models.response.ResponseGetOtp;
 import models.response.ResponseLogin;
@@ -38,14 +39,14 @@ public interface MoyoService {
     @POST("login")
     Call<ResponseLogin> signIn(@Body SignIn signIn);
 
-    @POST("bp-readings")
-    Call<ResponseBody> postBpReading(@Header("Authorization") String token,@Body PostBpReading postBpReading);
+    @POST("patient-bp")
+    Call<ResponseBpReadings> postBpReading(@Header("Authorization") String token,@Body PostBpReading postBpReading);
 
     @POST("patient-data")
     Call<ResponseBody> postPatientData(@Header("Authorization") String token,@Body PostPatientData postPatientData);
 
-    @GET("bp-readings/{userId}")
-    Call<ArrayList<BpReadings>> getReadings(@Header("Authorization") String token, @Path("userId") String userId);
+    @GET("patient-bp/{userId}")
+    Call<ArrayList<ResponseBloodPressure>> getReadings(@Header("Authorization") String token, @Path("userId") String userId);
 
     @GET("patient-data/{userId}")
     Call<ArrayList<PatientData>> getPatientData(@Header("Authorization") String token, @Path("userId") String userId);

@@ -1,7 +1,6 @@
 package models.response;
 
-public class ResponseBpReadings {
-
+public class ResponseBloodPressure {
     private String createdAt;
 
     private String patient_id;

@@ -13,12 +13,13 @@ import com.example.moyoapp.R;
 import java.util.ArrayList;
 
 import models.response.BpReadings;
+import models.response.ResponseBloodPressure;
 
 public class Adapter_Bp_Readings extends RecyclerView.Adapter<Adapter_Bp_Readings.ViewHolder> {
 
-    private ArrayList<BpReadings> bpReadingsArrayList;
+    private ArrayList<ResponseBloodPressure> bpReadingsArrayList;
 
-    public Adapter_Bp_Readings(ArrayList<BpReadings> bpReadingsArrayList) {
+    public Adapter_Bp_Readings(ArrayList<ResponseBloodPressure> bpReadingsArrayList) {
         this.bpReadingsArrayList = bpReadingsArrayList;
     }
 
@@ -44,16 +45,18 @@ public class Adapter_Bp_Readings extends RecyclerView.Adapter<Adapter_Bp_Reading
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewSystolicDiastolic,textViewHeartRate;
+        TextView textViewSystolic,textViewDiastolic,textViewHeartRate;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textViewSystolicDiastolic=itemView.findViewById(R.id.textViewSystolic);
+            textViewSystolic=itemView.findViewById(R.id.textViewSystolic);
+            textViewDiastolic =itemView.findViewById(R.id.textViewDiastolic);
             textViewHeartRate=itemView.findViewById(R.id.textViewHeartRate);
         }
 
-        public void bind(BpReadings bpReadings){
-            textViewSystolicDiastolic.setText(bpReadings.getSystolic_diastolic());
+        public void bind(ResponseBloodPressure bpReadings){
+            textViewSystolic.setText(bpReadings.getSys());
+            textViewDiastolic.setText(bpReadings.getDia());
             textViewHeartRate.setText(bpReadings.getHeart_rate());
         }
     }

@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 import com.example.moyoapp.R;
 
 import models.Post.PostBpReading;
+import models.response.ResponseBpReadings;
 import models.response.ResponseLogin;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -77,10 +79,11 @@ public class EnterBloodPressureReadingsFragment extends Fragment {
 
     private void postBpReadingToServer(String token, PostBpReading postBpReading) {
         moyoService = RetrofitRequest.getRetrofitInstance().create(MoyoService.class);
-        Call<ResponseBody> responseSubmitBpReadings=moyoService.postBpReading("Baerer "+token,postBpReading);
-        responseSubmitBpReadings.enqueue(new Callback<ResponseBody>() {
+        Call<ResponseBpReadings> responseSubmitBpReadings=moyoService.postBpReading("Baerer "+token,postBpReading);
+        responseSubmitBpReadings.enqueue(new Callback<ResponseBpReadings>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            public void onResponse(Call<ResponseBpReadings> call, Response<ResponseBpReadings> response) {
+                Log.e("Bp_Test",String.valueOf(response.body()));
                 progressBar_enterbloodpressurereadings.setVisibility(View.GONE);
                 clearRecords();
                 Toast.makeText(getActivity(),"Records Updated Succesfully!",Toast.LENGTH_LONG).show();
@@ -91,7 +94,7 @@ public class EnterBloodPressureReadingsFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            public void onFailure(Call<ResponseBpReadings> call, Throwable t) {
                 Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 
 import adapters.Adapter_Bp_Readings;
 import models.response.BpReadings;
+import models.response.ResponseBloodPressure;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -63,13 +65,13 @@ public class bpreadindsFragment extends Fragment {
 
     private void getBpReadings(String token,String id) {
         MoyoService moyoService = RetrofitRequest.getRetrofitInstance().create(MoyoService.class);
-        Call<ArrayList<BpReadings> > arrayListCall=moyoService.getReadings("Baerer "+token,id);
-        arrayListCall.enqueue(new Callback<ArrayList<BpReadings>>() {
+        Call<ArrayList<ResponseBloodPressure> > arrayListCall=moyoService.getReadings("Baerer "+token,id);
+        arrayListCall.enqueue(new Callback<ArrayList<ResponseBloodPressure>>() {
             @Override
-            public void onResponse(Call<ArrayList<BpReadings>> call, Response<ArrayList<BpReadings>> response) {
+            public void onResponse(Call<ArrayList<ResponseBloodPressure>> call, Response<ArrayList<ResponseBloodPressure>> response) {
 
                 Toast.makeText(getContext(), response.message(), Toast.LENGTH_SHORT).show();
-                        ArrayList<BpReadings> bpReadingsArrayList=response.body();
+                        ArrayList<ResponseBloodPressure> bpReadingsArrayList=response.body();
         Adapter_Bp_Readings adapter_bp_readings = new Adapter_Bp_Readings(bpReadingsArrayList);
         recyclerView_bpreadings.setAdapter(adapter_bp_readings);
 //                recyclerview
@@ -77,7 +79,7 @@ public class bpreadindsFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<ArrayList<BpReadings>> call, Throwable t) {
+            public void onFailure(Call<ArrayList<ResponseBloodPressure>> call, Throwable t) {
                 Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
 
             }
