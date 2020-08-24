@@ -17,9 +17,11 @@ import android.widget.Toast;
 
 import com.example.moyoapp.R;
 
+import models.Post.PostBp;
 import models.Post.PostBpReading;
 import models.response.ResponseBpReadings;
 import models.response.ResponseLogin;
+import models.response.ResponsePatientBp;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -65,25 +67,26 @@ public class EnterBloodPressureReadingsFragment extends Fragment {
 
                 String patient_id= sharedPref.getString("id", "");
 
-                String sytolic_diastolic=editText_systolic.getText().toString();
+                String systolic=editText_systolic.getText().toString();
+                String diastolic =editText_diastolic.getText().toString();
                 String heart_rate=editText_heartrate.getText().toString();
 
 
-                PostBpReading postBpReading=new PostBpReading(patient_id,sytolic_diastolic,heart_rate);
+                PostBp postBp=new PostBp(systolic,diastolic,heart_rate,patient_id);
                 //post bp readings
-                postBpReadingToServer(token,postBpReading);
+                postBpReadingToServer(token,postBp);
             }
         });
 
     }
 
-    private void postBpReadingToServer(String token, PostBpReading postBpReading) {
+    private void postBpReadingToServer(String token, PostBp postBp) {
         moyoService = RetrofitRequest.getRetrofitInstance().create(MoyoService.class);
-        Call<ResponseBpReadings> responseSubmitBpReadings=moyoService.postBpReading("Baerer "+token,postBpReading);
-        responseSubmitBpReadings.enqueue(new Callback<ResponseBpReadings>() {
+        Call<ResponsePatientBp> responseSubmitBpReadings=moyoService.postPatientBp("Baerer "+token,postBp);
+        responseSubmitBpReadings.enqueue(new Callback<ResponsePatientBp>() {
             @Override
-            public void onResponse(Call<ResponseBpReadings> call, Response<ResponseBpReadings> response) {
-                Log.e("Bp_Test",String.valueOf(response.body()));
+            public void onResponse(Call<ResponsePatientBp> call, Response<ResponsePatientBp> response) {
+                Log.e("Bp_Test", String.valueOf(response.body()));
                 progressBar_enterbloodpressurereadings.setVisibility(View.GONE);
                 clearRecords();
                 Toast.makeText(getActivity(),"Records Updated Succesfully!",Toast.LENGTH_LONG).show();
@@ -94,7 +97,7 @@ public class EnterBloodPressureReadingsFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<ResponseBpReadings> call, Throwable t) {
+            public void onFailure(Call<ResponsePatientBp> call, Throwable t) {
                 Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });

@@ -19,6 +19,7 @@ public class Adapter_Bp_Readings extends RecyclerView.Adapter<Adapter_Bp_Reading
 
     private ArrayList<ResponseBloodPressure> bpReadingsArrayList;
 
+
     public Adapter_Bp_Readings(ArrayList<ResponseBloodPressure> bpReadingsArrayList) {
         this.bpReadingsArrayList = bpReadingsArrayList;
     }

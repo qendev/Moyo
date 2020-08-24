@@ -2,6 +2,7 @@ package services;
 
 import java.util.ArrayList;
 
+import models.Post.PostBp;
 import models.Post.PostBpReading;
 import models.Post.PostOtp;
 import models.Post.PostPatientData;
@@ -17,6 +18,7 @@ import models.response.ResponseGetOtp;
 import models.response.ResponseLogin;
 import models.response.ResponseMyDoctor;
 import models.response.ResponseNewPatientData;
+import models.response.ResponsePatientBp;
 import models.response.ResponsePatientDataNew;
 import models.response.ResponseRequestDoctor;
 import okhttp3.ResponseBody;
@@ -40,7 +42,7 @@ public interface MoyoService {
     Call<ResponseLogin> signIn(@Body SignIn signIn);
 
     @POST("patient-bp")
-    Call<ResponseBpReadings> postBpReading(@Header("Authorization") String token,@Body PostBpReading postBpReading);
+    Call<ResponseBody> postBpReading(@Header("Authorization") String token,@Body PostBpReading postBpReading);
 
     @POST("patient-data")
     Call<ResponseBody> postPatientData(@Header("Authorization") String token,@Body PostPatientData postPatientData);
@@ -71,6 +73,9 @@ public interface MoyoService {
 
     @GET("bp-readings/{userId}")
     Call<ArrayList<ResponseBpReadings>> getBpReadings(@Header("Authorization") String token, @Path("userId") String userId);
+
+    @POST("patient-bp")
+    Call<ResponsePatientBp> postPatientBp(@Header("Authorization") String token, @Body PostBp postBp);
 
 
 

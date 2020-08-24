@@ -33,13 +33,28 @@ public class bpreadindsFragment extends Fragment {
 
     RecyclerView recyclerView_bpreadings;
 
+    private Adapter_Bp_Readings adapter_bp_readings;
+    private ArrayList<ResponseBloodPressure> bpReadingsArrayList;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_bpreadinds, container, false);
 
         recyclerView_bpreadings=view.findViewById(R.id.recyclerView_bpreadings);
+
+        adapter_bp_readings = new Adapter_Bp_Readings(bpReadingsArrayList);
+
+        recyclerView_bpreadings.setAdapter(adapter_bp_readings);
+
+        adapter_bp_readings.notifyDataSetChanged();
+
+
+
+
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         recyclerView_bpreadings.setHasFixedSize(true);
