@@ -52,8 +52,13 @@ dependencies {
     //for country code
     implementation 'com.github.joielechong:countrycodepicker:2.4.2'
 
+
     //for graph
-    implementation 'com.jjoe64:graphview:4.2.2'
+    implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
+
+
+
+
 
 
 }
